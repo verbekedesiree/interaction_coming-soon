@@ -1,0 +1,668 @@
+/*------------------------------------*\
+#FONTS
+\*------------------------------------*/
+
+@font-face{
+	font-family: 'Acumin-Pro';
+	font-weight: 400;
+	src: url("../fonts/Acumin-BdPro.otf") format("opentype");
+}
+/*------------------------------------*\
+#Variables
+\*------------------------------------*/
+
+:root {
+	/* colors */
+	
+	--global-color: #42586E;
+	--global-color-front: var(--global-color);
+		/* opacity */
+	--global-opacity-muted: 0.6;
+	/* transitions */
+}
+
+/*------------------------------------*\
+#GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+	font-size: 16px;
+	line-height: 1.5;
+	font-family: 'Acumin-Pro', Helvetica, arial, sans-serif;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-feature-settings: 'zero' 1;
+	/* background: var(--global-color-back); */
+	color: var(--global-color);
+	background-color:#FFFFFF;
+	transition: all 1s ease;
+}
+
+body {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+}
+
+
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+/*
+* Remove text-shadow in selection highlight:
+* https://twitter.com/miketaylr/status/12228805301
+*
+* Customize the background color to match your design.
+*/
+
+::-moz-selection {
+	background: red;
+	color: white;
+	text-shadow: none;
+}
+
+::selection {
+	background: red;
+	color: white;
+	text-shadow: none;
+}
+
+/*------------------------------------*\
+#Elements
+\*------------------------------------*/
+
+/*
+Elements: Images
+---
+Default markup for images to make them responsive
+*/
+
+img {
+	max-width: 100%;
+	vertical-align: top;
+}
+
+/*
+    Elements: typography
+    ---
+    Default markup for typographic elements
+*/
+
+h1,
+h2,
+h3 {
+	font-weight: 700;
+}
+
+h1 {
+	font-size: 70px;
+	line-height: 80px;
+	margin: 0 0 24px;
+}
+
+h2 {
+	font-size: 32px;
+	line-height: 40px;
+	margin: 0 0 24px;
+}
+
+h3 {
+	font-size: 26px;
+	line-height: 32px;
+	margin: 0 0 24px;
+}
+
+h4,
+h5,
+h6 {
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 24px;
+	margin: 0 0 24px;
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+	margin: 0 0 24px;
+}
+
+ul,
+ol {
+	padding-left: 24px;
+}
+
+li ul,
+li ol {
+	margin-bottom: 0;
+}
+
+blockquote {
+	font-style: normal;
+	font-size: 23px;
+	line-height: 32px;
+	margin: 0 0 24px;
+}
+
+blockquote * {
+	font-size: inherit;
+	line-height: inherit;
+}
+
+figcaption {
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 16px;
+	margin-top: 8px;
+}
+
+hr {
+	border: 0;
+	height: 1px;
+	background: LightGrey;
+	margin: 0 0 24px;
+}
+
+a {
+	color: red;
+	outline-color: red;
+	outline-width: medium;
+	outline-offset: 2px;
+}
+
+a:visited,
+a:active {
+	color: red;
+}
+
+a:hover,
+a:focus {
+	color: red;
+}
+
+label,
+input {
+	display: block;
+}
+
+select {
+	width: 100%;
+}
+
+input::placeholder {
+	color: gray;
+}
+
+/*------------------------------------*\
+#OBJECTS
+\*------------------------------------*/
+
+/*
+    Object: Button reset
+    ---
+    Small button reset object
+*/
+
+.o-button-reset {
+	border: none;
+	margin: 0;
+	padding: 0;
+	width: auto;
+	overflow: visible;
+	background: transparent;
+
+	/* inherit font & color from ancestor */
+	color: inherit;
+	font: inherit;
+
+	/* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+	line-height: normal;
+
+	/* Corrects font smoothing for webkit */
+	-webkit-font-smoothing: inherit;
+	-moz-osx-font-smoothing: inherit;
+
+	/* Corrects inability to style clickable `input` types in iOS */
+	-webkit-appearance: none;
+}
+
+/*
+    Object: Hide accessible
+    ---
+    Accessibly hide any element
+*/
+
+.o-hide-accessible {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
+/*------------------------------------*\
+#COMPONENTS
+\*------------------------------------*/
+
+.c-title{
+	font-size: 28px;
+	color: #42586E;
+	line-height: 40px;
+}
+
+.c-text-middle{
+	font-size: 32px;
+	color: #42586E;
+	line-height: 70px;
+	text-align: center;
+}
+
+.c-text-end{
+	font-size: 28px;
+	color: #42586E;
+	line-height: 80px;
+	text-align: center;
+}
+
+.c-form{
+	display: flex;
+	align-items: center;
+}
+
+.c-email{
+	display: flex;
+	align-items: center;
+	width: 327px;
+	height: 52px;
+	border: 2px solid #90C0F0;
+	border-radius: 12px;
+	background-color: white;
+
+}
+
+.c-paragraphpage2{
+	font-size: 24px !important;
+}
+.c-paragraphpage3{
+	font-size: 24px !important;
+}
+
+.c-subscribe{
+	display: flex;
+	align-items: center;
+
+}
+
+/* .c-text-email{
+	font-size:18px;
+	margin-top: -16px; 
+	margin-bottom: -2px;
+	margin-left: 20px;
+	color: #C0C0C0;
+} */
+
+.c-left{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-direction: column;
+	float: left;
+	height: 100%;
+	width: 752px;
+
+}
+
+.c-right{
+	display: flex;
+	align-items: end;
+	justify-content: center;
+	float: right;
+	height: 100%;
+	width: 760px;
+	
+}
+.c-bg{
+	background-image: url("../img/jpg/background.jpg");
+	opacity: 0.8;
+	background-position: center;
+ 	background-repeat: no-repeat;
+  	background-size: cover;
+}
+
+
+.c-btn{
+	background-color: #90C0F0;
+	border-radius: 12px;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	display: inline-block;
+	font-size: 14px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+
+.c-btn span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+  }
+  
+.c-btn span:after {
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+  }
+  
+  .c-btn:hover span {
+	padding-right: 25px;
+  }
+  
+  .c-btn:hover span:after {
+	opacity: 1;
+	right: 0;
+  }
+
+  .c-page{
+	  width: 100%;
+	  height: 800px;
+	  display:flex;
+  }
+
+  .c-imgboat{
+	background-image: url("../img/jpg/bgpage2.jpg");
+	opacity: 0.8;
+	background-position: center;
+ 	background-repeat: no-repeat;
+  	background-size: cover;
+  }
+
+  .c-imgapp{
+	  background-image: url("../img/png/app.png");
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+  }
+
+  .c-left2{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-direction: column;
+	float: left;
+	height: 100%;
+	width: 760px;
+  }
+
+.c-left3{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-direction: column;
+	float: left;
+	height: 100%;
+	width: 752px;
+  }
+
+  .c-right3{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-direction: column;
+	float: right;
+	height: 100%;
+	width: 752px;
+  }
+
+  .c-position-titlepage2{
+	  width: 760px;
+	  height: 100%;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  flex-direction: column;
+
+  }
+.c-text-middlepage2{
+	font-size: 32px;
+	text-align: center;
+	
+}
+
+.c-text-middlepage3{
+	font-size: 32px;
+	text-align: center;
+}
+
+.c-paragraphpage2{
+	font-size: 28px;
+	line-height: 60px;
+	text-align: center;
+	margin-left: 50px;
+
+}
+.c-paragraphpage3{
+	width: 650px;
+	height: 112px;
+	font-size: 28px;
+	line-height: 56px;
+	text-align: center;
+
+}
+
+
+.c-image-mobile{
+	display:none;
+}
+
+
+
+
+/*------------------------------------*\
+#UTILITIES
+\*------------------------------------*/
+
+/*
+    Utilities: Mute
+    Mute with opacity
+*/
+
+/*------------------------------------*\
+#STATES
+\*------------------------------------*/
+
+/*
+    Change the theme using CSS vars.
+*/
+
+/* Night version: just switch the light and dark vars */
+
+/*------------------------------------*\
+#MEDIA
+\*------------------------------------*/
+@media screen and (max-width: 1150px){
+	.c-left{
+		background-image:  url("../img/jpg/background.jpg");
+		background-position: center;
+ 		background-repeat: no-repeat;
+  		background-size: cover;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		flex-direction: column;
+		height: 100%;
+		width: 100%;
+	}
+	.c-right{
+		display: none;
+	}
+
+	.c-form{
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		flex-direction: column;
+	}
+
+	.c-left2{
+		display: none;
+		align-items: center;
+		justify-content: center;
+		
+	  }
+
+	.c-position-titlepage2{
+		width: 760px;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.c-page{
+		width: 100%;
+		height: 800px;
+		display:flex;
+		flex-direction: column;
+	}
+
+	.c-left3{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: column;
+		float: left;
+		height: 30%;
+		width: 752px;
+		margin-bottom: -250px;
+	}
+
+	
+	.c-right3{
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		flex-direction: column;
+		float: right;
+		height: 100%;
+		width: 752px;
+	  }
+
+	.c-paragraphpage3{
+		display:none;
+	}
+	.c-paragraphpage2{
+		width: 350px;
+		text-align: center;
+		font-size: 18px;
+		margin-left: 0px;
+		
+	}
+
+	
+	.c-title-mobile{
+		font-size: 32px;
+	}
+
+	
+
+	.c-image-mobile{
+		display:flex;
+		width: 380px;
+		height: 180px;
+		align-items: flex-end;
+		background-image: url("../img/png/bal.png");
+		background-position: center;
+ 		background-repeat: no-repeat;
+  		background-size: cover;
+	}
+	
+
+}
+/*
+    Print styles.
+    ---
+    Inlined to avoid the additional HTTP request:
+    http://www.phpied.com/delay-loading-your-print-css/
+*/
+
+@media print {
+	*,
+	*:before,
+	*:after {
+		background: transparent !important;
+		color: #000 !important;
+		/* Black prints faster:
+        http://www.sanbeiji.com/archives/953 */
+		box-shadow: none !important;
+		text-shadow: none !important;
+	}
+	a,
+	a:visited {
+		text-decoration: underline;
+	}
+	a[href]:after {
+		content: ' (' attr(href) ')';
+	}
+	abbr[title]:after {
+		content: ' (' attr(title) ')';
+	}
+	/*
+    * Don't show links that are fragment identifiers,
+    * or use the `javascript:` pseudo protocol
+    */
+	a[href^='#']:after,
+	a[href^='javascript:']:after {
+		content: '';
+	}
+	pre {
+		white-space: pre-wrap !important;
+	}
+	pre,
+	blockquote {
+		border: 1px solid #999;
+		page-break-inside: avoid;
+	}
+	/*
+    * Printing Tables:
+    * http://css-discuss.incutio.com/wiki/Printing_Tables
+    */
+	thead {
+		display: table-header-group;
+	}
+	tr,
+	img {
+		page-break-inside: avoid;
+	}
+	p,
+	h2,
+	h3 {
+		orphans: 3;
+		widows: 3;
+	}
+	h2,
+	h3 {
+		page-break-after: avoid;
+	}
+}
